@@ -1,229 +1,251 @@
 :root {
-    /* Paleta de colores */
-    --color-primary: #ffe600;
-    --color-secondary: #2d3277;
-    --color-accent: green;
-    --color-background: lightblue;
-    --color-text: black;
-    --color-border: lightgray;
-  }
+  /* Paleta de colores */
+  --color-primary: #ffe600;
+  --color-secondary: #2d3277;
+  --color-accent: green;
+  --color-background: lightblue;
+  --color-text: black;
+  --color-border: lightgray;
+  --nav-width: 190px;
+}
 
 /* Estilos para el encabezado */
 .main-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--color-primary);
-    padding: 10px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-  }
-  
-  .main-header h1 {
-    font-size: 50px;
-    color: var(--color-secondary);
-    margin-left: 15%;
-  }
-  
-  .main-header img {
-    height: 75px;
-  }
-  
-  .notifications {
-    display: flex;
-    align-items: center;
-  }
-  
-  .notification-icon {
-    font-size: 24px;
-    color: var(--color-white);
-    margin-right: 5px;
-    animation: bell-animation 2s infinite;
-  }
-  
-  .notification-icon:hover {
-    animation: bell-animation-hover 0.3s infinite;
-  }
-  
-  @keyframes bell-animation {
-    0% {
-      transform: rotate(0);
-    }
-    25% {
-      transform: rotate(15deg);
-    }
-    50% {
-      transform: rotate(-15deg);
-    }
-    75% {
-      transform: rotate(15deg);
-    }
-    100% {
-      transform: rotate(0);
-    }
-  }
-  
-  @keyframes bell-animation-hover {
-    0% {
-      transform: rotate(0) scale(1.5);
-    }
-    50% {
-      transform: rotate(15deg) scale(1.5);
-    }
-    100% {
-      transform: rotate(0) scale(1.5);
-    }
-  }
-  
-  .notification-counter {
-    background-color: var(--color-primary);
-    color: var(--color-accent);
-    font-size: 14px;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 50%;
-  }
-  
- 
-  .main-menu {
-    float: left;
-    clear: both;
-    margin-top: 80px; /* Ajusta el valor según sea necesario */
-    margin-bottom: 50px;
-    background-color: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.main-header h1 {
+  font-size: 50px;
+  color: var(--color-secondary);
+  margin-left: 15%;
+}
+
+.main-header img {
+  height: 75px;
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon {
+  font-size: 24px;
+  color: var(--color-text);
+  margin-right: 5px;
+  animation: bell-animation 2s infinite;
+}
+
+.notification-icon:hover {
+  animation: bell-animation-hover 0.3s infinite;
+}
+
+@keyframes bell-animation {
+  0% {
+    transform: rotate(0);
   }
 
-  .menu-group {
-    padding: 10px 0; /* Agrega 10px de espacio desde el margen superior e inferior */
-    display: flex;
-    flex-direction: column;
+  25% {
+    transform: rotate(15deg);
   }
 
-  .menu-group a {
-    padding-left: 10px; /* Ajusta el valor según tus preferencias */
-  }
- 
- 
-  .exclusive-offers {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 80px;
-    background-color: var(--color-background);
-    /* overflow-y: auto; /* Ajustar solo el desplazamiento vertical */
-    /* max-height: calc(100vh - 80px); Limitar la altura para evitar desbordamiento */ 
-  }
-  
-  
-  /* .additional-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
-    overflow-y: auto; /* Ajustar solo el desplazamiento vertical */
-    /* max-height: calc(100vh - 120px); /* Limitar la altura para evitar desbordamiento 
-  }   */ 
-
-  .art-offer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .art-offer header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 20px;
-  }
-  
-  .art-offer header>h3{
-    width: 100px;
-    height: auto;
-    background-color: blue;
+  50% {
+    transform: rotate(-15deg);
   }
 
-  .art-offer header>p{
-    width: 100px;
-    height: auto;
-    margin-left: 20px;
-    background-color: red;
+  75% {
+    transform: rotate(15deg);
   }
 
-  .art-offer img {
-    margin: 0 20px;
-    width: 150px; /* Establece el ancho deseado */
-    height: auto; /* Ajusta la altura de forma proporcional */    
+  100% {
+    transform: rotate(0);
   }
-  
-  .art-offer section {
+}
 
-    background-color: #ffe600;
-  }
-
-  .art-offer footer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-left: 20px;
-  }
-  
-  .art-offer button {
-    animation: blink 3s infinite;
-    background-color: red;
-    margin: 10px;
-  }
-  
-  @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
+@keyframes bell-animation-hover {
+  0% {
+    transform: rotate(0) scale(1.5);
   }
 
-  .exclusive-offers .art-offer header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .exclusive-offers .art-offer header p[data-art-old-price]::before {
-    content: attr(data-art-old-price);
-    margin-right: 10px;
-    text-decoration: line-through;
-  }
-  
-  .exclusive-offers .art-offer header .current-price {
-    font-weight: bold;
-  }
-  
-
-  .contact-support {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    z-index: 9999;
+  50% {
+    transform: rotate(15deg) scale(1.5);
   }
 
-  /* Reglas para posicionar el footer al final */
+  100% {
+    transform: rotate(0) scale(1.5);
+  }
+}
+
+.notification-counter {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+.main-menu {
+  float: left;
+  clear: both;
+  margin-top: 80px;
+  /* Ajusta el valor según sea necesario */
+  margin-bottom: 50px;
+  background-color: var(--color-background);
+  overflow-y: auto;
+}
+
+.menu-group {
+  padding: 10px 0;
+  /* Agrega 10px de espacio desde el margen superior e inferior */
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-group a {
+  padding-left: 10px;
+}
+
+
+.exclusive-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 80px;
+  width: -webkit-fill-available;
+  background-color: var(--color-background);
+  color: limegreen;
+ }
+
+
+.art-offer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--color-secondary);
+}
+
+.art-offer header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.art-offer header>h3 {
+  width: 100px;
+  height: auto;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: large;
+  /* background-color: blue; */
+}
+
+.art-offer header>p {
+  width: 100px;
+  height: auto;
+  margin-left: 20px;
+  margin-right: -100px;
+  background-color: var(--color-accent);
+  opacity: 0.9;
+  transform: rotate(30deg) scale(1.2);
+}
+
+.art-offer img {
+  margin-right: 20px;
+  width: 200px;
+  /* Establece el ancho deseado */
+  height: auto;
+  /* Ajusta la altura de forma proporcional */
+}
+
+.art-offer section {
+  width: 120px;
+  /* background-color: #ffe600; */
+}
+
+.art-offer footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 100px;
+  margin-right: 10px;
+}
+
+.art-details{
+  color: lightgrey;
+  overflow: auto;
+}
+.art-details>h4{
+  font-weight: bolder;
+  font-size: medium;
+}
+
+.art-offer button {
+  animation: blink 0.5s infinite;
+  background-color: red;
+  margin-top: 20px;
+  margin-right: 40px;
+  transform: scale(1.5);
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.exclusive-offers .art-offer header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.exclusive-offers .art-offer header p[data-art-old-price]::before {
+  content: "$" attr(data-art-old-price);
+  margin-right: 10px;
+  text-decoration: line-through;
+
+}
+
+.exclusive-offers .art-offer header .current-price {
+  font-weight: bold;
+}
+
+
+.contact-support {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Reglas para posicionar el footer al final */
 .main-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    padding: 20px;
-    text-align: center;
-  }
-
-  
-  
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  padding: 20px;
+  text-align: center;
+}
