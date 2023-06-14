@@ -94,12 +94,10 @@
   border-radius: 50%;
 }
 
-
 .main-menu {
   float: left;
   clear: both;
   margin-top: 80px;
-  /* Ajusta el valor según sea necesario */
   margin-bottom: 50px;
   background-color: var(--color-background);
   overflow-y: auto;
@@ -107,7 +105,6 @@
 
 .menu-group {
   padding: 10px 0;
-  /* Agrega 10px de espacio desde el margen superior e inferior */
   display: flex;
   flex-direction: column;
 }
@@ -126,7 +123,6 @@
   color: limegreen;
 }
 
-
 .art-offer {
   display: flex;
   flex-direction: row;
@@ -144,6 +140,8 @@
 .exclusive-offers>h2 {
   color: var(--color-text);
   font-style: italic;
+  font-size: x-large;
+  margin-top: 10px;
 }
 
 .art-offer header>h3 {
@@ -152,7 +150,6 @@
   margin-left: 30px;
   font-weight: bold;
   font-size: large;
-  /* background-color: blue; */
 }
 
 .art-offer header>p {
@@ -168,14 +165,11 @@
 .art-offer img {
   margin-right: 20px;
   width: 200px;
-  /* Establece el ancho deseado */
   height: auto;
-  /* Ajusta la altura de forma proporcional */
 }
 
 .art-offer section {
   width: 120px;
-  /* background-color: #ffe600; */
 }
 
 .art-offer footer {
@@ -197,7 +191,7 @@
 }
 
 .art-offer button {
-  border-radius: 10px; /* Puedes ajustar el valor según tu preferencia */
+  border-radius: 10px;
   padding: 5px 5px;
   animation: blink 0.5s infinite;
   background-color: red;
@@ -205,10 +199,10 @@
   margin-right: 30px;
   transform: scale(1.5);
 }
-/* Estilos adicionales para el efecto de interacción */
+
 .art-offer button:hover {
-  background-color: #ccc; /* Cambia el color de fondo al pasar el cursor por encima */
-  cursor: pointer; /* Cambia el cursor al pasar el cursor por encima */
+  background-color: var(--color-background);
+  cursor: pointer;
 }
 
 @keyframes blink {
@@ -235,13 +229,8 @@
   content: "$" attr(data-art-old-price);
   margin-right: 10px;
   text-decoration: line-through;
-
+  color: var(--color-text);
 }
-
-.exclusive-offers .art-offer header .current-price {
-  font-weight: bold;
-}
-
 
 .contact-support {
   position: fixed;
@@ -250,7 +239,6 @@
   z-index: 9999;
 }
 
-/* Reglas para posicionar el footer al final */
 .main-footer {
   position: fixed;
   left: 0;
