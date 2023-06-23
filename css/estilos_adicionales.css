@@ -1,5 +1,5 @@
-:root {
-  /* Paleta de colores */
+/* :root {
+
   --color-primary: #ffe600;
   --color-secondary: #2d3277;
   --color-accent: red;
@@ -7,13 +7,35 @@
   --color-text: black;
   --color-border: lightgray;
   --nav-width: 190px;
+}  */
+
+:root {
+  /* Paleta de colores sugerida para una página de venta online */
+  --color-primary: #007bff;
+  /* Azul primario */
+  --color-secondary: #ffc107;
+  /* Amarillo secundario */
+  --color-accent: #dc3545;
+  /* Rojo de acento */
+  --color-background: #f8f9fa;
+  /* Gris claro para el fondo */
+  --color-text: #333333;
+  /* Negro para el texto */
+  --color-border: #ced4da;
+  /* Gris claro para los bordes */
+  --nav-width: 190px;
+}
+
+body {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Estilos para el encabezado */
 .main-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--color-primary);
   padding: 10px;
   position: fixed;
@@ -26,22 +48,26 @@
 .main-header h1 {
   font-size: 50px;
   color: var(--color-secondary);
-  margin-left: 15%;
+  margin-left: 170px;
+  margin-right: 30px;
 }
 
 .main-header img {
   height: 75px;
+  margin-left: 30px;
 }
 
 .notifications {
   display: flex;
-  align-items: center;
+  align-items: normal;
+  margin-left: 60px;
+  margin-right: 0;
 }
 
 .notification-icon {
   font-size: 24px;
   color: var(--color-text);
-  margin-right: 5px;
+  margin: 5px 0;
   animation: bell-animation 2s infinite;
 }
 
@@ -120,7 +146,7 @@
   margin-top: 80px;
   width: -webkit-fill-available;
   background-color: var(--color-background);
-  color: limegreen;
+  color: var(--color-text);
 }
 
 .art-offer {
@@ -180,8 +206,12 @@
   margin-right: 10px;
 }
 
+.art-offer footer p {
+  font-weight: bolder;
+}
+
 .art-details {
-  color: lightgrey;
+  color: var(--color-text);
   overflow: auto;
 }
 
@@ -248,4 +278,220 @@
   color: var(--color-text);
   padding: 20px;
   text-align: center;
+}
+
+.activity,
+.cards,
+.stock-control,
+.currency {
+  /* flex: auto;
+  flex-direction: column-reverse; */
+  margin-top: 40px;
+  /* margin-inline: 10px; */
+}
+
+/* Activity*/
+
+.activity h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.activity table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activity th,
+.activity td {
+  padding: 10px;
+  text-align: left;
+}
+
+.activity th {
+  background-color: var(--color-background);
+}
+
+.activity tbody tr:nth-child(even) {
+  background-color: var(--color-background);
+}
+
+.activity button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.activity button span {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.activity button:hover span {
+  color: #ff9800;
+}
+
+
+/* Cards */
+
+.cards {
+  width: 150px;
+  /* max-width: 150px; Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  /* Oculta el contenido que excede el área visible */
+  position: relative;
+  /* Agrega posición relativa para alinear las tarjetas */
+  height: 150px;
+  /* Ajusta la altura según tus necesidades */
+}
+
+.cards article>img {
+  /* margin: 10px 10px; */
+  transform: scale(2.5);
+}
+
+.card {
+  margin-bottom: 10px;
+  /* Espacio entre las tarjetas */
+  animation: carouselAnimation 6s infinite;
+  /* Aplica la animación al carrusel */
+}
+
+@keyframes carouselAnimation {
+  0% {
+    margin-top: 0;
+    /* Muestra la primera tarjeta */
+  }
+
+  33.33% {
+    margin-top: -100%;
+    /* Oculta la primera tarjeta y muestra la segunda */
+  }
+
+  66.66% {
+    margin-top: -200%;
+    /* Oculta la segunda tarjeta y muestra la tercera */
+  }
+
+  100% {
+    margin-top: -200%;
+    /* Mantiene la tercera tarjeta visible */
+  }
+}
+
+/* Stock */
+
+.stock-alert {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin-right: 0;
+}
+
+.stock-alert::before {
+  content: attr(data-stock);
+  position: sticky ;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 30px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+/* .stock-alert[data-alert-level="high"]::before {
+  background-color: red;
+  animation: blink-stock 0.5s ease-in-out infinite alternate;
+}
+
+.stock-alert[data-alert-level="medium"]::before {
+  background-color: orange;
+  animation: blink-stock 3s ease-in-out infinite alternate;
+}
+
+.stock-alert[data-alert-level="low"]::before {
+  background-color: green;
+  animation: blink-stock 5s ease-in-out infinite alternate;
+}
+
+@keyframes blink-stock {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+} */
+
+
+
+/* Currency */
+
+.currency {
+  text-align: center;
+}
+
+.currency h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.currency .loading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.currency .loading-item {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  margin: 0 2px;
+  animation: loading-animation 1s infinite;
+}
+
+.currency p {
+  margin-bottom: 5px;
+}
+
+.currency p span {
+  font-weight: bold;
+}
+
+.contact-support {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-support .material-icons-outlined {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.contact-support .contact-text {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
