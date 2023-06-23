@@ -289,13 +289,9 @@ body {
 .cards,
 .stock-control,
 .currency {
-  /* flex: auto;
-  flex-direction: column-reverse; */
   margin-top: 40px;
-  /* margin-inline: 10px; */
   font-size: 10px;
-  margin-left: 30px;
-  margin-right: 0px;
+  margin-left: 20px;
   background-color: var(--color-background) ;
   text-align: center;
   border-radius: 15px ;
@@ -303,6 +299,10 @@ body {
 }
 
 /* Activity*/
+
+.activity {
+  width: 200px;
+}
 
 .activity h2 {
   margin-bottom: 10px;
@@ -315,7 +315,7 @@ body {
 
 .activity th,
 .activity td {
-  padding: 10px;
+  padding: 5px;
   text-align: left;
 }
 
@@ -340,64 +340,79 @@ body {
 
 .activity button:hover span {
   color: var(--color-accent);
+  transform: scale(1.5);
 }
-
 
 /* Cards */
 
 .cards {
-  width: 150px;
-  /* max-width: 150px; Ajusta el ancho máximo según tus necesidades */
-  overflow: hidden;
-  /* Oculta el contenido que excede el área visible */
-  position: relative;
-  /* Agrega posición relativa para alinear las tarjetas */
-  height: 150px;
-  /* Ajusta la altura según tus necesidades */
-}
-
-.cards article>img {
-  /* margin: 10px 10px; */
-  transform: scale(2.5);
+  width: 200px;
 }
 
 .card {
-  margin-bottom: 10px;
-  /* Espacio entre las tarjetas */
-  animation: carouselAnimation 6s infinite;
-  /* Aplica la animación al carrusel */
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes carouselAnimation {
+.card>img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(2.5);
+}
+
+.cards .card {
+  opacity: 0;
+  transform: scale(0);
+  animation: showCard 6s ease-in-out infinite;
+}
+
+.cards .card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.cards .card:nth-child(2) {
+  animation-delay: 8s;
+}
+
+.cards .card:nth-child(3) {
+  animation-delay: 16s;
+}
+
+@keyframes showCard {
   0% {
-    margin-top: 0;
-    /* Muestra la primera tarjeta */
+    opacity: 0;
+    transform: scale(0);
   }
-
+  20% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
   33.33% {
-    margin-top: -100%;
-    /* Oculta la primera tarjeta y muestra la segunda */
+    opacity: 1;
+    transform: scale(1.5);
   }
-
-  66.66% {
-    margin-top: -200%;
-    /* Oculta la segunda tarjeta y muestra la tercera */
+  53.33% {
+    opacity: 0;
+    transform: scale(0);
   }
-
   100% {
-    margin-top: -200%;
-    /* Mantiene la tercera tarjeta visible */
+    opacity: 0;
+    transform: scale(0);
   }
 }
 
 /* Stock */
+
+.stock-control {
+  width: 150px;
+}
 
 .stock-alert {
   position: relative;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin-top: 10px;
+  margin: 20px 30px 0;
 }
 
 .stock-alert::before {
@@ -442,11 +457,10 @@ body {
   }
 }
 
-
-
 /* Currency */
 
 .currency {
+  width: 150px;
   text-align: center;
 }
 
@@ -456,25 +470,56 @@ body {
 }
 
 .currency .loading {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   margin-bottom: 10px;
 }
 
 .currency .loading-item {
-  width: 10px;
-  height: 10px;
-  background-color: #000;
-  margin: 0 2px;
-  animation: loading-animation 1s infinite;
+  width: 50px;
+  border-radius: 0;
+  margin: 0 8px;
+  margin-top: auto;
+  animation: loading-animation 5s infinite;
+}
+
+.currency .loading-item:nth-child(1) {
+  height: 55px;
+  background-color: greenyellow;
+}
+
+.currency .loading-item:nth-child(2) {
+  height: 60px;
+  background-color: green;
+}
+
+.currency .loading-item:nth-child(3) {
+  height: 45px;
+  background-color: blue;
 }
 
 .currency p {
-  margin-bottom: 5px;
+  margin-bottom: 30px;
+  display: inline;
+  font-size: 15px;
 }
 
 .currency p span {
   font-weight: bold;
+}
+
+@keyframes loading-animation {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .contact-support {
@@ -491,18 +536,4 @@ body {
   font-size: 14px;
   vertical-align: middle;
   margin-left: 5px;
-}
-
-@keyframes loading-animation {
-  0% {
-    opacity: 0.2;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
