@@ -45,6 +45,8 @@ body {
 .main-header img {
   height: 75px;
   margin-left: 30px;
+  filter: drop-shadow(2px 4px 6px black);
+    
 }
 
 /* Notificaciones */
@@ -450,7 +452,7 @@ body {
 
 .stock-alert[data-alert-level="high"]::before {
   background-color: red;
-  animation: blink-stock 0.5s ease-in-out infinite alternate;
+  animation: blink-stock 0.3s ease-in-out infinite alternate;
 }
 
 .stock-alert[data-alert-level="medium"]::before {
