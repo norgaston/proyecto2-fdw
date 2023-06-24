@@ -1,14 +1,3 @@
-/* :root {
-
-  --color-primary: #ffe600;
-  --color-secondary: #2d3277;
-  --color-accent: red;
-  --color-background: lightblue;
-  --color-text: black;
-  --color-border: lightgray;
-  --nav-width: 190px;
-}  */
-
 :root {
   /* Paleta de colores sugerida para una página de venta online */
   --color-primary: #007bff;
@@ -32,6 +21,7 @@ body {
 }
 
 /* Estilos para el encabezado */
+
 .main-header {
   display: flex;
   align-items: center;
@@ -56,6 +46,8 @@ body {
   height: 75px;
   margin-left: 30px;
 }
+
+/* Notificaciones */
 
 .notifications {
   display: flex;
@@ -121,6 +113,8 @@ body {
   border-radius: 50%;
 }
 
+/* Menú principal */
+
 .main-menu {
   float: left;
   clear: both;
@@ -139,6 +133,8 @@ body {
 .menu-group a {
   padding-left: 10px;
 }
+
+/* Ofertas exclusivas */
 
 .exclusive-offers {
   display: flex;
@@ -260,8 +256,10 @@ body {
   content: "$" attr(data-art-old-price);
   margin-right: 10px;
   text-decoration: line-through;
-  color: var(--color-text);
+  color: var(--color-border);
 }
+
+/* Contacto */
 
 .contact-support {
   position: fixed;
@@ -274,6 +272,24 @@ body {
   cursor: pointer;
 }
 
+.contact-support {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-support .material-icons-outlined {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.contact-support .contact-text {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Footer */
+
 .main-footer {
   position: fixed;
   left: 0;
@@ -285,16 +301,18 @@ body {
   text-align: center;
 }
 
+/* Actividad reciente, control de stock, tarjetas y cotización */
+
 .activity,
 .cards,
 .stock-control,
 .currency {
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 10px;
   margin-left: 20px;
-  background-color: var(--color-background) ;
+  background-color: var(--color-background);
   text-align: center;
-  border-radius: 15px ;
+  border-radius: 15px;
   padding: 5px;
 }
 
@@ -349,56 +367,42 @@ body {
   width: 200px;
 }
 
-.card {
+.cards {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
 }
 
-.card>img {
-  max-width: 100%;
-  height: auto;
-  transform: scale(2.5);
+.card {
+  width: 140px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+  padding: 5px;
 }
 
-.cards .card {
-  opacity: 0;
-  transform: scale(0);
-  animation: showCard 6s ease-in-out infinite;
+.card:hover {
+  transform: scale(1.5);
+  z-index: 1000;
 }
 
-.cards .card:nth-child(1) {
-  animation-delay: 0s;
+.card h3 {
+  margin-top: 0;
 }
 
-.cards .card:nth-child(2) {
-  animation-delay: 8s;
+.card p {
+  margin-bottom: 0;
 }
 
-.cards .card:nth-child(3) {
-  animation-delay: 16s;
-}
-
-@keyframes showCard {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-  33.33% {
-    opacity: 1;
-    transform: scale(1.5);
-  }
-  53.33% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0);
-  }
+.card img {
+  transform: scale(1);
+  border-radius: 50%;
+  float: right;
+  margin-left: 10px;
 }
 
 /* Stock */
@@ -417,10 +421,7 @@ body {
 
 .stock-alert::before {
   content: attr(data-stock);
-  position: sticky ;
-  /* top: 50px;
-  left: 20px; */
-  /* transform: translateX(-50%); */
+  position: sticky;
   width: 100%;
   height: 30px;
   background-color: var(--color-background);
@@ -520,20 +521,4 @@ body {
   100% {
     opacity: 1;
   }
-}
-
-.contact-support {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.contact-support .material-icons-outlined {
-  font-size: 24px;
-  vertical-align: middle;
-}
-
-.contact-support .contact-text {
-  font-size: 14px;
-  vertical-align: middle;
-  margin-left: 5px;
 }
